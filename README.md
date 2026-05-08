@@ -40,6 +40,7 @@ PORT=port
 EMAIL_USER=your_email_address
 EMAIL_PASS=your_app_password_(create_one_in_Gmail)
 EMAILABLE_API_KEY=an_api_key_from_emailable
+FRONTEND_URL=your_frontend_url
 ```
 ### Install dependencies and run server  
 Run these from the root folder  

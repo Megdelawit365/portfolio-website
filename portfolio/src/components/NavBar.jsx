@@ -1,43 +1,50 @@
-import { Moon } from 'lucide-react'
 import React from 'react'
-import Menu from './Menu'
+import DarkModeToggle from './DarkModeToggle'
 
 const NavBar = ({ refs }) => {
 
     const scrollTo = (ref) => {
-        ref.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+        ref?.current?.scrollIntoView({ behavior: "smooth", block: "start" })
     }
 
     return (
-        <div className='flex backdrop-blur-sm bg-[radial-gradient(#ccc_1px,transparent_1px)] bg-[size:30px_30px] flex-row w-full justify-between items-center fixed top-0 left-0 right-0 md:px-20 p-5 px-7'>
+        <div className='fixed dark:border-none top-0 left-0 right-0 z-50 backdrop-blur-sm dark:bg-[#0a192f] flex border-b border-gray-200 flex-row w-full justify-between items-center md:px-15 p-5 px-7'>
+
             <span
                 onClick={() => scrollTo(refs.heroRef)}
-                className="font-['Reenie_Beanie'] text-[1.8rem] p-0 m-0 hover:text-[var(--primary)] hover:scale-[1.05] transition-all duration-400 cursor-pointer"
+                className="font-[Plaster] dark:text-[#64ffda] text-[1.8rem] p-0 m-0 dark:hover:text-[#64ffda] text-n hover:text-[var(--primary)] hover:scale-[1.05] transition-all duration-400 cursor-pointer"
             >
-                Megdelawit
+                MA
             </span>
 
-            <div className='hidden md:flex flex-row w-fit justify-between items-center font-semibold text-gray-400 gap-10 text-[0.85rem]'>
-                <button onClick={() => scrollTo(refs.heroRef)} className='hover:text-[var(--primary)] hover:scale-[1.05] transition-all duration-400 cursor-pointer'>
-                    HOME
-                </button>
+            <div className="hidden md:flex flex-row font-mono gap-10 text-[0.9rem] w-[55rem] pr-4 justify-end text-gray-600 dark:text-gray-400">
 
-                <button onClick={() => scrollTo(refs.skillsRef)} className='hover:text-[var(--primary)] hover:scale-[1.05] transition-all duration-400 cursor-pointer'>
-                    SKILLS
-                </button>
+                <span onClick={() => scrollTo(refs.heroRef)} className='hover:text-black dark:hover:text-[#64ffda] cursor-pointer'>
+                    About
+                </span>
 
-                <button onClick={() => scrollTo(refs.projectsRef)} className='hover:text-[var(--primary)] hover:scale-[1.05] transition-all duration-400 cursor-pointer'>
-                    PROJECTS
-                </button>
+                <span onClick={() => scrollTo(refs.skillsRef)} className='hover:text-black dark:hover:text-[#64ffda] cursor-pointer'>
+                    Skills
+                </span>
 
-                <button onClick={() => scrollTo(refs.contactRef)} className='hover:text-[var(--primary)] hover:scale-[1.05] transition-all duration-400 cursor-pointer'>
-                    CONTACT
-                </button>
+                <span onClick={() => scrollTo(refs.projectsRef)} className='hover:text-black dark:hover:text-[#64ffda] cursor-pointer'>
+                    Projects
+                </span>
+
+                <span onClick={() => scrollTo(refs.xRef)} className='hover:text-black dark:hover:text-[#64ffda] cursor-pointer'>
+                    Experience
+                </span>
+
+                <span onClick={() => scrollTo(refs.contactRef)} className='hover:text-black dark:hover:text-[#64ffda] cursor-pointer'>
+                    Contact
+                </span>
+
             </div>
 
-            <div className='md:hidden block'>
-                <Menu refs={refs} />
+            <div className='flex flex-row justify-center items-center'>
+                <DarkModeToggle />
             </div>
+
         </div>
     )
 }

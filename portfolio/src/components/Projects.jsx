@@ -1,110 +1,62 @@
 import React from 'react'
+import ProjectCard from './ProjectCard'
+
+const projects = [
+    {
+        title: "BOOK REVIEW APP",
+        description:
+            "Built a full-stack Book Review platform using the MERN stack where users can browse books, write reviews, and rate them. Includes authentication, protected routes, user profiles, CRUD operations, and a responsive UI with real-time updates.",
+        tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+        github: "https://github.com/Megdelawit365/Book-review-app",
+        link: "https://book-review-app-5.onrender.com/",
+    },
+    {
+        title: "NOTES APP",
+        description:
+            "Developed a notes management application allowing users to create, edit, delete, and organize notes efficiently. Features include secure authentication, REST API integration, and a clean responsive interface for productivity.",
+        tags: ["React", "Node.js", "MongoDB", "Express"],
+        github: "https://github.com/Megdelawit365/mern-notes-app",
+        link: "https://mern-notes-app-frontend-af03.onrender.com/",
+    },
+    {
+        title: "E-COMMERCE APP",
+        description:
+            "Built a complete e-commerce platform with Laravel including product management, shopping cart, checkout system, order tracking, and admin dashboard for managing inventory and users.",
+        tags: ["Laravel", "PHP", "MySQL", "Blade", "CRUD"],
+        github: "https://github.com/Megdelawit365/Laravel-Ecommerce",
+        link: "#",
+    },
+    {
+        title: "LIBRARY MANAGEMENT SYSTEM",
+        description:
+            "Designed a library management system using Laravel to handle book inventory, borrowing records, user management, and admin controls with clean UI and efficient database structure.",
+        tags: ["Laravel", "PHP", "MySQL", "Admin Panel"],
+        github: "https://github.com/Megdelawit365/Library-Book-Borrowing-System",
+        link: "#",
+    },
+]
 
 const Projects = () => {
     return (
-        <div className='min-h-[200vh] md:w-[80%] md:ml-[13%] m-auto pt-20 flex flex-col '>
-            <div className='flex flex-row justify-between items-center mb-8 gap-4 md:gap-8'>
-                <h1 className='text-[1.7rem] md:text-4xl whitespace-nowrap'>My Projects</h1>
-                <hr className='border flex-1' />
+        <div className='min-h-screen pt-30 text-gray-600 mb-30 md:px-36 dark:text-[#ccd6f6] flex flex-col gap-4'>
+
+            <div className='flex flex-row font-mono justify-start items-center mb-8 gap-4 md:gap-8'>
+                <h1 className='text-[1.7rem] md:text-5xl font-[900] whitespace-nowrap'>
+                    PROJECTS
+                </h1>
             </div>
-            <div className="grid grid-rows-2 gap-4">
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                    <div className='flex flex-col bg-[rgba(0,0,0,0.05)] pb-4 border rounded-lg'>
-                        <img src="/notes2.png" className='h-64 w-full rounded-t-lg' alt="" />
-                        <h1 className='text-[1.5rem] font-bold py-2 px-4'>NOTES APP</h1>
-                        <div className="flex flex-wrap gap-2 px-4 pb-2">
-                            <span className="text-sm px-2 py-1 border rounded-md">React</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">Node</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">Express</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">MongoDB</span>
-                        </div>
-                        <p className='px-4 pb-4 text-lg text-gray-500'>MERN Notes App that allows users to create,
-                            edit, and delete notes with a clean and intuitive interface
-                        </p>
-                        <div className="flex flex-row px-4 gap-3">
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/github2.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <a href="https://github.com/Megdelawit365/mern-notes-app" className='text-[1.2rem]'>Github</a>
-                            </button>
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/link.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <a href="https://mern-notes-app-frontend-af03.onrender.com/" className='text-[1.2rem]'>Site</a>
-                            </button>
-                        </div>
-                    </div>
-                    <div className='flex flex-col bg-[rgba(0,0,0,0.05)] pb-4 border rounded-lg'>
-                        <img src="/book.png" className='h-64 w-full rounded-t-lg' alt="" />
-                        <h1 className='text-[1.5rem] font-bold py-2 px-4'>BOOK REVIEW APP</h1>
-                        <div className="flex flex-wrap gap-2 px-4 pb-2">
-                            <span className="text-sm px-2 py-1 border rounded-md">React</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">Node</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">Express</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">MongoDB</span>
-                        </div>
-                        <p className='px-4 pb-4 text-lg text-gray-500'>
-                            Book Review App for browsing books, writing reviews and managing users'
-                            entries through create, edit, and delete functionality.
-                        </p>
-                        <div className="flex flex-row px-4 gap-3">
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/github2.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <a href="https://github.com/Megdelawit365/Book-review-app" className='text-[1.2rem]'>Github</a>
-                            </button>
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/link.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <a href="https://book-review-app-5.onrender.com/" className='text-[1.2rem]'>Site</a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                    <div className='flex flex-col bg-[rgba(0,0,0,0.05)] pb-4 border rounded-lg'>
-                        <img src="/ecommerce.png" className='h-64 w-full rounded-t-lg' alt="" />
-                        <h1 className='text-[1.5rem] font-bold py-2 px-4'>ECOMMERCE APP</h1>
-                        <div className="flex flex-wrap gap-2 px-4 pb-2">
-                            <span className="text-sm px-2 py-1 border rounded-md">Laravel</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">MySQL</span>
-                        </div>
-                        <p className='px-4 pb-4 text-lg text-gray-500'>A full-stack eCommerce
-                            application built with Laravel that allows users to browse products,
-                            manage a shopping cart, and complete orders
-                        </p>
-                        <div className="flex flex-row px-4 gap-3">
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/github2.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <a href="https://github.com/Megdelawit365/Laravel-Ecommerce" className='text-[1.2rem]'>Github</a>
-                            </button>
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/link.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <span className='text-[1.2rem]'>Site</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div className='flex flex-col bg-[rgba(0,0,0,0.05)] pb-4 border rounded-lg'>
-                        <img src="/LMS.png" className='h-64 w-full rounded-t-lg' alt="" />
-                        <h1 className='text-[1.5rem] font-bold py-2 px-4'>LIBRARY MANAGEMENT SYSTEM</h1>
-                        <div className="flex flex-wrap gap-2 px-4 pb-2">
-                            <span className="text-sm px-2 py-1 border rounded-md">Laravel</span>
-                            <span className="text-sm px-2 py-1 border rounded-md">MySQL</span>
-
-                        </div>
-                        <p className='px-4 pb-4 text-lg text-gray-500'>
-                            A full-stack Library Management System (LMS)
-                            designed to manage books, users, and borrowing activities efficiently
-                        </p>
-                        <div className="flex flex-row px-4 gap-3">
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/github2.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <a href="https://github.com/Megdelawit365/Library-Book-Borrowing-System" className='text-[1.2rem]'>Github</a>
-                            </button>
-                            <button className='border-2 cursor-pointer hover:scale-[1.04] transition-all duration-200 rounded-lg bg-[var(--primary)] p-1 px-6 flex flex-row items-center justify-center gap-2'>
-                                <img src="/link.png" className='h-[1.5rem] w-[1.5rem]' alt="" />
-                                <span className='text-[1.2rem]'>Site</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div className='grid grid-cols-1 gap-6'>
+                {projects.map((project, index) => (
+                    <ProjectCard
+                        key={index}
+                        title={project.title}
+                        description={project.description}
+                        tags={project.tags}
+                        github={project.github}
+                        link={project.link}
+                    />
+                ))}
             </div>
 
         </div>

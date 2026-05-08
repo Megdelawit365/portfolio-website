@@ -1,8 +1,30 @@
-import { MenuIcon, X } from 'lucide-react'
-import React, { useState } from 'react'
+import { Briefcase, Contact, FolderOpen, MessageSquare } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { FaCode } from "react-icons/fa"
 
 const Menu = ({ refs }) => {
     const [open, setOpen] = useState(false)
+    const [visible, setVisible] = useState(true)
+
+    let lastScrollY = 0
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY
+
+            if (currentScrollY > lastScrollY) {
+                setVisible(false)
+            } else {
+                setVisible(true)
+            }
+
+            lastScrollY = currentScrollY
+        }
+
+        window.addEventListener("scroll", handleScroll)
+
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
     const scrollTo = (ref) => {
         ref.current?.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -10,36 +32,41 @@ const Menu = ({ refs }) => {
     }
 
     return (
-        <div>
-            <MenuIcon onClick={() => setOpen(true)} />
-
+        <>
             <div
-                className={`fixed top-0 right-0 h-[100vh] w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${open ? "translate-x-0" : "translate-x-full"
+                className={`fixed bottom-3 left-1/2 -translate-x-1/2 w-[90%] z-50 md:hidden transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
             >
-                <div className="p-4 flex justify-between items-center">
-                    <X className="cursor-pointer" onClick={() => setOpen(false)} />
-                </div>
+                <div className="flex items-center justify-between gap-4 px-4 py-2 bg-white/90 dark:bg-[#0a192f] backdrop-blur-md shadow-sm w-full rounded-xl dark:border dark:border-gray-700">
 
-                <div className="p-4 flex flex-col gap-4 text-[1.3rem]">
-                    <button onClick={() => scrollTo(refs.heroRef)} className='hover:text-[var(--primary)] transition-all duration-300 text-left border-b pb-2'>
-                        HOME
+                    <button onClick={() => scrollTo(refs.heroRef)} className="flex flex-col items-center text-[10px] text-gray-500 dark:text-[#ccd6f6]">
+                        <Contact size={16} className="text-gray-600 dark:text-[#ccd6f6]" />
+                        About
                     </button>
 
-                    <button onClick={() => scrollTo(refs.skillsRef)} className='hover:text-[var(--primary)] transition-all duration-300 text-left border-b pb-2'>
-                        SKILLS
+                    <button onClick={() => scrollTo(refs.skillsRef)} className="flex flex-col items-center text-[10px] text-gray-500 dark:text-[#ccd6f6]">
+                        <FaCode size={16} className="text-gray-600 dark:text-[#ccd6f6]" />
+                        Skills
                     </button>
 
-                    <button onClick={() => scrollTo(refs.projectsRef)} className='hover:text-[var(--primary)] transition-all duration-300 text-left border-b pb-2'>
-                        PROJECTS
+                    <button onClick={() => scrollTo(refs.projectsRef)} className="flex flex-col items-center text-[10px] text-gray-500 dark:text-[#ccd6f6]">
+                        <FolderOpen size={16} className="text-gray-600 dark:text-[#ccd6f6]" />
+                        Projects
                     </button>
 
-                    <button onClick={() => scrollTo(refs.contactRef)} className='hover:text-[var(--primary)] transition-all duration-300 text-left border-b pb-2'>
-                        CONTACT
+                    <button onClick={() => scrollTo(refs.xRef)} className="flex flex-col items-center text-[10px] text-gray-500 dark:text-[#ccd6f6]">
+                        <Briefcase size={16} className="text-gray-600 dark:text-[#ccd6f6]" />
+                        Experience
                     </button>
+
+                    <button onClick={() => scrollTo(refs.contactRef)} className="flex flex-col items-center text-[10px] text-gray-500 dark:text-[#ccd6f6]">
+                        <MessageSquare size={16} className="text-gray-600 dark:text-[#ccd6f6]" />
+                        Contact
+                    </button>
+
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

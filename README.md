@@ -1,32 +1,51 @@
-# My Portfolio Website  
+# My Portfolio Website
 
-This is my personal portfolio website built to showcase my projects, skills and experience.  
+This is my personal portfolio website built to showcase my projects, skills and experience
+
+It includes:
+- React frontend (Vite)
+- Express backend API
+- Nodemailer (Gmail SMTP) for sending emails
+- Emailable API for email verification
+- GitHub contribution graph integration
 
 ---
 
-## Getting Started  
+## Frontend Setup  
 
-Follow these steps to run the project locally:  
+### Environment variables  
+Create a .env file in the portfolio folder and fill the following:  
 
-### 1. Clone the repository  
 ```bash
-git clone https://github.com/Megdelawit365/portfolio-website
+VITE_API_URL=your_backend_API
+VITE_TOKEN=your_github_token
 ```
+### Install dependencies and run server  
+Run these from the root folder  
 
-### 2. Navigate into the project folder  
-```bash
+``` bash
 cd portfolio
 npm install
-```
-
-### 3. Set up environment variables   
-Create a .env file in the root directory and add your EmailJS credentials (get them on emailjs.com):  
-```bash
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-```
-### 4. Run the development server
-```bash
 npm run dev
+```
+---
+
+## Backend Setup  
+### Environment variables  
+
+Create a .env file in the portfolio folder and fill the following:  
+
+```bash
+PORT=port
+EMAIL_USER=your_email_address
+EMAIL_PASS=your_app_password_(create_one_in_Gmail)
+EMAILABLE_API_KEY=an_api_key_from_emailable
+```
+### Install dependencies and run server  
+Run these from the root folder  
+
+``` bash
+cd backend
+npm install
+nodemon server.js
 ```

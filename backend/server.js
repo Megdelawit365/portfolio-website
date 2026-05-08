@@ -8,9 +8,12 @@ const app = express()
 
 app.use(cors({
     origin: [
-        process.env.FRONTEND_URL
-    ]
+        process.env.FRONTEND_URL,
+    ],
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
 }))
+
 app.use(express.json())
 
 app.use("/api/contact", contactRoute)

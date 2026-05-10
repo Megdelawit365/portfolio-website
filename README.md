@@ -33,7 +33,7 @@ npm run dev
 ## Backend Setup  
 ### Environment variables  
 
-Create a .env file in the portfolio folder and fill the following:  
+Create a .env file in the backend folder and fill the following:  
 
 ```bash
 PORT=port

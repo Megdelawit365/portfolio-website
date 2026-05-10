@@ -9,15 +9,15 @@ const VerticalIcons = () => {
         <div className='fixed hidden md:flex md:flex-col bottom-0 left-15 gap-9 justify-center items-center'>
 
             <a href="https://github.com/Megdelawit365" target="_blank" rel="noreferrer">
-                <FiGithub className="text-gray-700 dark:text-[#ccd6f6]  dark:hover:text-[#64ffda] hover:text-[var(--primary)] hover:scale-[1.1] transition-all duration-200 cursor-pointer" size={22} />
+                <FiGithub className="text-gray-700 dark:text-[#ccd6f6]  dark:hover:text-[#64ffda]  hover:scale-[1.1] transition-all duration-200 cursor-pointer" size={22} />
             </a>
 
-            <a href="https://leetcode.com/" target="_blank" rel="noreferrer">
-                <SiLeetcode className="text-gray-700 dark:text-[#ccd6f6]  dark:hover:text-[#64ffda] hover:text-[#FFA116] hover:scale-[1.1] transition-all duration-200 cursor-pointer" size={22} />
+            <a href="https://leetcode.com/u/Megdelawit365/" target="_blank" rel="noreferrer">
+                <SiLeetcode className="text-gray-700 dark:text-[#ccd6f6]  dark:hover:text-[#64ffda]  hover:scale-[1.1] transition-all duration-200 cursor-pointer" size={22} />
             </a>
 
             <a href="https://www.linkedin.com/in/megdelawit-aynalem-715156245/" target="_blank" rel="noreferrer">
-                <FiLinkedin className="text-gray-700 dark:text-[#ccd6f6]  dark:hover:text-[#64ffda] hover:text-[var(--primary)] hover:scale-[1.1] transition-all duration-200 cursor-pointer" size={22} />
+                <FiLinkedin className="text-gray-700 dark:text-[#ccd6f6]  dark:hover:text-[#64ffda]  hover:scale-[1.1] transition-all duration-200 cursor-pointer" size={22} />
             </a>
 
 

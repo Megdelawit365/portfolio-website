@@ -61,12 +61,12 @@ const Contact = () => {
                         </span>
 
                         <h1 className='text-4xl md:text-6xl font-black leading-[0.95] text-gray-800 dark:text-[#ccd6f6]'>
-                            LET&apos;S CREATE SOMETHING
+                            LET'S CREATE SOMETHING
                         </h1>
 
                         <p className='text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-300 max-w-md'>
-                            Open to internships, freelance opportunities,
-                            collaborations, and software engineering discussions.
+                            Open to internships, opportunities,
+                            collaborations and discussions.
                         </p>
 
                     </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                         </span>
                     </div>
 
-                    <div className='flex flex-col items-start md:items-end gap-3'>
+                    <div className='flex flex-col items-start md:items-end w-full gap-3'>
 
                         {status && (
                             <span className='text-sm px-4 py-2 dark:bg-[#112240] text-gray-700 dark:text-[#64ffda]  dark:border-gray-700 font-mono'>
@@ -124,11 +124,10 @@ const Contact = () => {
                         <button
                             onClick={handleSubmit}
                             disabled={loading}
-                            className='group flex items-center gap-3 px-6 py-3 rounded-full bg-gray-800 dark:bg-[#64ffda] text-white dark:text-[#0a192f] font-semibold hover:scale-[1.03] transition duration-300 disabled:opacity-70'
+                            className='px-6 py-3 rounded-lg md:w-fit w-full bg-gray-800 dark:bg-[#64ffda] text-white dark:text-[#0a192f] font-semibold hover:scale-[1.03] transition duration-300 disabled:opacity-70'
                         >
                             {loading ? "SENDING..." : "SEND MESSAGE"}
 
-                            <FiArrowUpRight className='group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300' />
                         </button>
 
                     </div>
